@@ -261,7 +261,7 @@ def user_home(req):
     if 'user' in req.session:
         products = product.objects.all().order_by('id')
         category=Category.objects.all()
-        return render(req,'user/home.html',{'product':products,'category':category})
+        return render(req,'index.html',{'product':products,'category':category})
     elif 'shop' in req.session:
         categories = Category.objects.all()
         category_products = {category.category: product.objects.filter(category=category) for category in categories}
